@@ -1,0 +1,65 @@
+To create an Entity-Relationship (ER) model based on the given requirements, we can identify the entities, their attributes, and relationships between them.
+
+Entities and Their Attributes
+Gymnasium
+
+Attributes:
+Gymnasium Name (Primary Key)
+Address
+Telephone Number
+Member
+
+Attributes:
+Member ID (Primary Key)
+Last Name
+First Name
+Address
+Date of Birth
+Gender
+Session
+
+Attributes:
+Session ID (Primary Key)
+Sport Type
+Schedule
+Maximum Capacity (fixed at 20 members)
+Coach
+
+Attributes:
+Coach ID (Primary Key)
+Last Name
+First Name
+Age
+Specialty
+Relationships
+Gymnasium to Member
+
+A Gymnasium can have multiple Members.
+A Member is registered at exactly one Gymnasium.
+Relationship Type: One-to-Many (1 Gymnasium : Many Members).
+Member to Session
+
+A Member can attend multiple Sessions, and a Session can have up to 20 Members.
+Relationship Type: Many-to-Many (Many Members : Many Sessions), with a constraint that a session can accommodate a maximum of 20 members.
+A junction table can be used to model this relationship, containing:
+Member ID (Foreign Key)
+Session ID (Foreign Key)
+Session to Coach
+
+A Session can be led by a maximum of 2 Coaches, and each Coach can lead multiple Sessions.
+Relationship Type: Many-to-Many (Many Sessions : Many Coaches).
+A junction table can be used to model this relationship, containing:
+Coach ID (Foreign Key)
+Session ID (Foreign Key)
+ER Diagram
+Entities:
+
+Gymnasium: Gymnasium Name (PK), Address, Telephone
+Member: Member ID (PK), Last Name, First Name, Address, Date of Birth, Gender
+Session: Session ID (PK), Sport Type, Schedule
+Coach: Coach ID (PK), Last Name, First Name, Age, Specialty
+Relationships:
+
+Gymnasium to Member: One-to-Many (1 Gymnasium : Many Members)
+Member to Session: Many-to-Many (Many Members : Many Sessions)
+Session to Coach: Many-to-Many (Many Sessions : Many Coaches)
